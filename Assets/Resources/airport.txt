@@ -1,0 +1,104 @@
+ id  , name                     , name_eng                             , IATA , ICAO , lat       , lon        
+   1 , 旭川空港                 , Asahikawa Airport                    , AKJ  , RJEC , 43.670833 ,   142.4475 
+   2 , 新千歳空港               , New Chitose Airport                  , CTS  , RJCC ,    42.775 , 141.692222 
+   3 , 函館空港                 , Hakodate Airport                     , HKD  , RJCH ,     41.77 , 140.821944 
+   4 , 釧路空港                 , Kushiro Airport                      , KUH  , RJCK , 43.040833 , 144.192778 
+   5 , 紋別空港                 , Monbetsu Airport                     , MBE  , MBE  , 44.304167 , 143.408056 
+   6 , 女満別空港               , Memanbetsu Airport                   , MMB  , RJCM , 43.880556 , 144.164167 
+   7 , 中標津空港               , Nakashibetsu Airport                 , SHB  , RJCN ,   43.5775 ,     144.96 
+   8 , 帯広空港                 , Obihiro Airport                      , OBO  , RJCB , 42.733333 , 143.217222 
+   9 , 奥尻空港                 , Okushiri Airport                     , OIR  , OIR  , 42.073056 , 139.429167 
+  10 , 札幌飛行場               , Okadama Airport                      , OKD  , RJCO ,   43.1175 , 141.381389 
+  11 , 礼文空港                 , Rebun Airport                        , RBJ  , RBJ  ,    45.455 , 141.039167 
+  12 , 利尻空港                 , Rishiri Airport                      , RIS  , RIS  , 45.239722 , 141.191389 
+  13 , 稚内空港                 , Wakkanai Airport                     , WKJ  , RJCW , 45.401944 , 141.804722 
+  14 , 青森空港                 , Aomori Airport                       , AOJ  , RJSA , 40.734722 , 140.690833 
+  15 , 三沢飛行場               , Misawa Airport                       , MSJ  , RJSM , 40.705278 , 141.371944 
+  16 , 八戸航空基地             , Hachinohe Air Base                   ,      ,      , 40.552222 , 141.468333 
+  17 , 秋田空港                 , Akita Airport                        , AXT  , RJSK , 39.615556 , 140.218611 
+  18 , 花巻空港                 , Hanamaki Airport                     , HNA  , RJSI , 39.428611 , 141.135278 
+  19 , 山形空港                 , Yamagata Airport                     , GAJ  , RJSC , 38.411667 , 140.371111 
+  20 , 庄内空港                 , Shonai Airport                       , SYO  , RJSY , 38.812222 , 139.787222 
+  21 , 仙台空港                 , Sendai Airport                       , SDJ  , RJSS , 38.136944 ,   140.9225 
+  22 , 福島空港                 , Fukushima Airport                    , FKS  , RJSF , 37.227222 , 140.430556 
+  23 , 成田国際空港             , Narita International Airport         , NRT  , RJAA , 35.763889 , 140.391667 
+  24 , 八丈島空港               , Hachijojima Airport                  , HAC  , RJTH ,    33.115 , 139.785833 
+  25 , 羽田空港                 , Haneda Airport                       , HND  , RJTT , 35.553333 , 139.781111 
+  26 , 三宅島空港               , Miyakejima Airport                   ,      ,      , 34.073611 , 139.560278 
+  27 , 大島空港                 , Oshima Airport                       , OIM  , OIM  , 34.781944 , 139.360278 
+  28 , 横田飛行場               , Yokota Airfield                      ,      ,      , 35.748333 , 139.348333 
+  29 , 新潟空港                 , Niigata Airport                      , KIJ  , RJSN , 37.955833 , 139.120556 
+  30 , 佐渡空港                 , Sado Airport                         , SDS  , SDS  ,     38.06 , 138.413889 
+  31 , 松本空港                 , Matsumoto Airport                    , MMJ  , RJAF , 36.166667 , 137.922778 
+  32 , 富山空港                 , Toyama Airport                       , TOY  , TOY  , 36.648333 ,   137.1875 
+  33 , 能登空港                 , Noto Airport                         , NTQ  , RJNW , 37.291944 , 136.958889 
+  34 , 小松飛行場               , Komatsu Airport                      , KMQ  , RJNK , 36.393611 , 136.407778 
+  35 , 福井空港                 , Fukui Airport                        ,      ,      , 36.142778 , 136.223889 
+  36 , 名古屋飛行場             , Nagoya Airfield                      , NKM  , RJNA ,    35.255 , 136.924444 
+  37 , 中部国際空港             , Chubu Centrair International Airport , NGO  , RJNN , 34.858333 , 136.805278 
+  38 , 関西国際空港             , Kansai International Airport         , KIX  , RJBB , 34.427222 , 135.243889 
+  39 , 神戸空港                 , Kobe Airport                         , UKB  , RJBE , 34.633333 , 135.226389 
+  40 , 八尾空港                 , Yao Airport                          ,      ,      , 34.596111 , 135.602778 
+  41 , 伊丹空港                 , Itami Airport                        , ITM  , RJOO , 34.785278 , 135.438056 
+  42 , 但馬飛行場               , Tajima Airfield                      , TKG  , RJBT , 35.512778 , 134.786944 
+  43 , 南紀白浜空港             , Nanki-Shirahama Airport              , SHM  , RJBD , 33.662222 , 135.364444 
+  44 , 岡山空港                 , Okayama Airport                      , OKJ  , RJOB , 34.756944 , 133.855278 
+  45 , 広島空港                 , Hiroshima Airport                    , HIJ  , RJOA , 34.436111 , 132.919444 
+  46 , 広島西飛行場             , Hiroshima-Nishi Airport              , HIW  , RJBH , 34.370946 , 132.419558 
+  47 , 山口宇部空港             , Yamaguchi-Ube Airport                , UBJ  , RJDC ,     33.93 , 131.278611 
+  48 , 鳥取空港                 , Tottori Airport                      , TTJ  , RJOR ,     35.53 , 134.166389 
+  49 , 美保飛行場               , Miho Airport                         , YGJ  , RJOH , 35.492222 , 133.236389 
+  50 , 石見空港                 , Iwami Airport                        , IWJ  , RJOW , 34.673056 , 131.792778 
+  51 , 出雲空港                 , Izumo Airport                        , IZO  , RJOC , 35.414722 , 132.886111 
+  52 , 隠岐空港                 , Oki Airport                          , OKI  , OKI  , 36.181111 , 133.324722 
+  53 , 高知空港                 , Kochi Airport                        , KCZ  , RJOK , 33.546111 , 133.669444 
+  54 , 松山空港                 , Matsuyama Airport                    , MYJ  , RJOM , 33.827222 , 132.699722 
+  55 , 高松空港                 , Takamatsu Airport                    , TAK  , RJOT , 34.214167 , 134.015556 
+  56 , 徳島飛行場               , Tokushima Airfield                   , TKS  , RJOS , 34.132778 , 134.606389 
+  57 , 福岡空港                 , Fukuoka Airport                      , FUK  , RJFF , 33.584444 , 130.451667 
+  58 , 北九州空港               , Kitakyushu Airport                   , KKJ  , RJFR , 33.845556 ,    131.035 
+  59 , 大分空港                 , Oita Airport                         , OIT  , RJFO , 33.476111 , 131.739722 
+  60 , 佐賀空港                 , Saga Airport                         , HSG  , RJSF , 33.149722 , 130.302222 
+  61 , 宮崎空港                 , Miyazaki Airport                     , KMI  , RJFM , 31.877222 , 131.448611 
+  62 , 熊本空港                 , Kumamoto Airport                     , KMJ  , RJFT , 32.837222 ,    130.855 
+  63 , 福江空港                 , Fukue Airport                        , FUJ  , RJFE ,   32.6675 ,     128.84 
+  64 , 壱岐空港                 , Iki Airport                          , IKI  , IKI  , 33.748889 , 129.785278 
+  65 , 長崎空港                 , Nagasaki Airport                     , NGS  , RJFU , 32.916944 , 129.913611 
+  66 , 対馬空港                 , Tsushima Airport                     , TSJ  , RJDT , 34.284722 , 129.330278 
+  67 , 奄美空港                 , Amami Airport                        , ASJ  , RJKA , 28.430833 ,   129.7125 
+  68 , 喜界空港                 , Kikai Airport                        , KKX  , KKX  , 28.488056 , 129.928056 
+  69 , 鹿児島空港               , Kagoshima Airport                    , KOJ  , RJFK ,      31.8 , 130.721667 
+  70 , 屋久島空港               , Yakushima Airport                    , KUM  , KUM  , 30.385556 , 130.659167 
+  71 , 沖永良部空港             , Okinoerabu Airport                   , OKE  , OKE  , 27.431667 , 128.705556 
+  72 , 与論空港                 , Yoron Airport                        , RNJ  , RNJ  , 27.043889 , 128.401667 
+  73 , 徳之島空港               , Tokunoshima Airport                  , TKN  , TKN  , 27.836389 , 128.881389 
+  74 , 種子島空港               , Tanegashima Airport                  , TNE  , TNE  ,    30.605 , 130.991667 
+  75 , 粟国空港                 , Aguni Airport                        , AGJ  , AGJ  , 26.592778 , 127.240278 
+  76 , 嘉手納飛行場             , Kadena Airfield                      ,      ,      , 26.351666 , 127.769444 
+  77 , 波照間空港               , Hateruma Airport                     , HTR  , HTR  , 24.058333 , 123.803889 
+  78 , 伊江島空港               , Iejima Airport                       ,      ,      ,   26.7225 , 127.786944 
+  79 , 石垣空港                 , Ishigaki Airport                     , ISG  , ISG  , 24.344722 , 124.186944 
+  80 , 慶良間空港               , Kerama Airport                       , KJP  , KJP  , 26.168333 , 127.293333 
+  81 , 北大東空港               , Kita-Daito Airport                   , KTD  , KTD  , 25.944722 , 131.326944 
+  82 , 南大東空港               , Minami-Daito Airport                 , MMD  , MMD  , 25.846667 , 131.263611 
+  83 , 宮古空港                 , Miyako Airport                       , MMY  , ROMY , 24.782778 ,    125.295 
+  84 , 与那国空港               , Yonaguni Airport                     , OGN  , OGN  ,   24.4675 , 122.979722 
+  85 , 那覇空港                 , Naha Airport                         , OKA  , RJAH , 26.195833 , 127.645833 
+  86 , 下地島空港               , Shimojishima Airport                 , SHI  , SHI  , 24.826667 , 125.144722 
+  87 , 多良間空港               , Tarama Airport                       , TRA  , TRA  , 24.653889 , 124.675278 
+  88 , 久米島空港               , Kumejima Airport                     , UEO  , UEO  , 26.363611 , 126.713889 
+  89 , 大館能代空港             , Odate-Noshiro Airport                , ONJ  , RJSR , 40.191944 , 140.371667 
+  90 , 新島空港                 , Niijima Airport                      ,      ,      , 34.366111 , 140.021667 
+  91 , 神津島空港               , Kouzushima Airport                   ,      ,      , 34.186111 , 139.136667 
+  92 , 調布飛行場               , Chofu Airport                        ,      ,      , 35.667222 , 139.532222 
+  93 , 岡南飛行場               , Kounan Airport                       ,      ,      , 34.592833 , 133.928519 
+  94 , 天草飛行場               , Amakusa Airfield                     ,      , RJDA , 32.480278 , 130.158333 
+  95 , 大分県央飛行場           , oitakenou Airfield                   ,      ,      , 33.026111 , 131.505556 
+  96 , 小値賀空港               , Ojika Airport                        ,      , RJDO ,   33.1875 ,   129.0925 
+  97 , 上五島空港               , Kami-Goto Airport                    ,      ,      ,     33.01 ,     194444 
+  98 , 枕崎飛行場               , Makurazaki　Airport                  ,      ,      ,   31.2625 , 130.358611 
+  99 , 薩摩硫黄島飛行場         , satsumaioujima Airfield              ,      ,      , 30.780833 , 130.272778 
+ 100 , 百里場                   , Hyakuri Airbase                      ,      ,      , 36.181111 , 140.415556 
+ 101 , 静岡空港                 , Shizuoka Airport                     , FSZ  ,      , 34.796111 ,  138.18944 
+ 102 , 弟子屈飛行場             , Tesikaga Airport                     ,      ,      , 43.479986 , 144.433565 
+
