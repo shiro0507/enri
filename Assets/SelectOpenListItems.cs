@@ -17,6 +17,7 @@ public class SelectOpenListItems : MonoBehaviour {
             foreach (var flight in CreateFlightRoot.flightData.flights.Keys)
             {
                 var item = Instantiate(prefab, _parentTransform);
+                item.transform.localPosition = Vector3.zero;
                 item.transform.localScale = new Vector3(1, 1, 1);
                 item.GetComponent<SelectOpenItem>().Init(flight);
             }
@@ -27,6 +28,7 @@ public class SelectOpenListItems : MonoBehaviour {
             foreach (var waypoint in CreateFlightRoot.flightPlan.plans.Values)
             {
                 var item = Instantiate(prefab, _parentTransform);
+                item.transform.localPosition = Vector3.zero;
                 item.transform.localScale = new Vector3(1, 1, 1);
                 item.GetComponent<SelectOpenItem>().Init(waypoint.Destination.WaypointID);
             }

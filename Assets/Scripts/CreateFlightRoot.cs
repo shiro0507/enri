@@ -123,19 +123,14 @@ public class CreateFlightRoot : MonoBehaviour {
         {
             if (flightData.flights.TryGetValue(flightId, out flight))
             {
-                if (_current >= flight.start && _current <= flight.end && flight.flightPathIndicator == null)
-                {
-                    flight.flightPathIndicator = ShowFlightLine(flight);
-                    altitudeLines.AddFlight(flight);
-                }
-                if (_current > flight.end && flight.flightPathIndicator != null)
-                {
-                    GameObject.Destroy(flight.flightPathIndicator.gameObject);
-                    flight.flightPathIndicator = null;
-                    altitudeLines.RemoveFlight(flight);
-                }
                 if (_current >= flight.start && _current <= flight.end)
                 {
+                    if (flight.flightPathIndicator == null)
+                    {
+                        flight.flightPathIndicator = ShowFlightLine(flight);
+                        altitudeLines.AddFlight(flight);
+                    }
+
                     flight.UpdateIndicators(_current);
 
 
@@ -147,6 +142,13 @@ public class CreateFlightRoot : MonoBehaviour {
                         {
                             flight.flightPathIndicator.gameObject.SetActive(false);
                         }
+                } else {
+                    if (flight.flightPathIndicator != null)
+                    {
+                        GameObject.Destroy(flight.flightPathIndicator.gameObject);
+                        flight.flightPathIndicator = null;
+                        altitudeLines.RemoveFlight(flight);
+                    }
                 }
             }
         }
