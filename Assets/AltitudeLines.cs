@@ -66,8 +66,8 @@ public class AltitudeLines : MaskableGraphic
                     var curr = f.datapoints[i];
                     var next = f.datapoints[i+1];
 
-                    Vector2 curr_c = new Vector2((float)((curr.Time-f.start).TotalMilliseconds/ts.TotalMilliseconds*sizeX), curr.Altitude/scale*sizeY);
-                    Vector2 next_c = new Vector2((float)((next.Time-f.start).TotalMilliseconds/ts.TotalMilliseconds*sizeX), next.Altitude/scale*sizeY);
+                    Vector2 curr_c = new Vector2((float)((ts.TotalMilliseconds - (curr.Time-f.start).TotalMilliseconds)/ts.TotalMilliseconds*sizeX), curr.Altitude/scale*sizeY);
+                    Vector2 next_c = new Vector2((float)((ts.TotalMilliseconds - (next.Time-f.start).TotalMilliseconds)/ts.TotalMilliseconds*sizeX), next.Altitude/scale*sizeY);
 
 
 
