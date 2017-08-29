@@ -16,6 +16,7 @@ public class FlightDataPoint
     public string GS;            // (knot)
     public string MACH;
 
+    public FlightPlanPoint Waypoint;
 
     public Vector3 Position {
 		get {

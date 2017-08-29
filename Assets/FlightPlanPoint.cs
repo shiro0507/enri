@@ -8,6 +8,8 @@ public class FlightPlanPoint
     public float Latitude;
     public float Longitude;
 
+    public RectTransform indicator;
+
     public Vector3 FlatPosition
     {
         get

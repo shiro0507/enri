@@ -13,31 +13,44 @@ public class AltitudeLines : MaskableGraphic
     public Color32 color32;
     List<Flight> flights = new List<Flight>();
 
-    public void AddFlight(Flight flight) {
+    TimeSpan currentTime = new TimeSpan();
+
+    public void SetTime(TimeSpan time)
+    {
+        currentTime = time;
+    }
+
+    public void AddFlight(Flight flight)
+    {
         flights.Add(flight);
     }
 
-    public void RemoveFlight(Flight flight) {
+    public void RemoveFlight(Flight flight)
+    {
         flights.Remove(flight);
     }
 
     TimeSpan ts = new TimeSpan(0);
     public int treshold = 10;
 
-    public void Refresh() {
+    public void Refresh()
+    {
         ts = new TimeSpan(0);
         int counter = 0;
-        foreach(Flight f in flights) {
+        foreach (Flight f in flights)
+        {
             if (!f.IsShown())
             {
                 continue;
             }
             var fts = f.end - f.start;
-            if (fts > ts) {
+            if (fts > ts)
+            {
                 ts = fts;
             }
             counter++;
-            if (counter > treshold) {
+            if (counter > treshold)
+            {
                 break;
             }
         }
@@ -46,56 +59,81 @@ public class AltitudeLines : MaskableGraphic
 
     public float scale = 40000;
 
-    protected override void OnPopulateMesh( Mesh mesh )
+    Vector2 CalculatePosition(TimeSpan time, TimeSpan startTime, float altitude, Vector2 size)
     {
-        var sizeX = rectTransform.rect.width;
-        var sizeY = rectTransform.rect.height;
-        using (var vh = new VertexHelper())
+        return new Vector2((float)((ts.TotalMilliseconds - (time - startTime).TotalMilliseconds) / ts.TotalMilliseconds * size.x), altitude / scale * size.y);
+
+    }
+
+    void Update()
+    {
+        vh = new VertexHelper();
+        var size = new Vector2(rectTransform.rect.width, rectTransform.rect.height);
+
+        int j = 0;
+        int counter = 0;
+        vh.Clear();
+        foreach (Flight f in flights)
         {
-            int j = 0;
-//            int v = 0;
-            int counter = 0;
-            vh.Clear();
-        foreach(Flight f in flights) {
-                if (!f.IsShown())
-                {
-                    continue;
-                }
-
-                for (int i = 0; i < f.datapoints.Count-1; i++){
-                    var curr = f.datapoints[i];
-                    var next = f.datapoints[i+1];
-
-                    Vector2 curr_c = new Vector2((float)((ts.TotalMilliseconds - (curr.Time-f.start).TotalMilliseconds)/ts.TotalMilliseconds*sizeX), curr.Altitude/scale*sizeY);
-                    Vector2 next_c = new Vector2((float)((ts.TotalMilliseconds - (next.Time-f.start).TotalMilliseconds)/ts.TotalMilliseconds*sizeX), next.Altitude/scale*sizeY);
-
-
-
-                    vh.AddVert( (Vector3)(curr_c)+Vector3.up*LineThikness*0.5f, color32, new Vector2(0f, 0f));
-                    vh.AddVert( (Vector3)(curr_c)-Vector3.up*LineThikness*0.5f, color32, new Vector2(0f, 1f));
-                    vh.AddVert( (Vector3)(next_c)+Vector3.up*LineThikness*0.5f, color32, new Vector2(1f, 1f));
-                    vh.AddVert( (Vector3)(next_c)-Vector3.up*LineThikness*0.5f, color32, new Vector2(1f, 0f));
-
-                    vh.AddTriangle(j*4+0,j*4+1,j*4+2);
-                    vh.AddTriangle(j*4+2,j*4+3,j*4+0);
-
-                    j++;
-//                    v+=4;
-//                    if (v+4 >= 65000) {
-//                        vh.FillMesh(mesh);
-//                        return;
-//                    }
-
-                }
-                counter++;
-                if (counter > treshold) {
-                    vh.FillMesh(mesh);
-                    return;
-                }
+            if (!f.IsShown())
+            {
+                continue;
             }
-            vh.FillMesh(mesh);
 
+            for (int i = 0; i < f.datapoints.Count - 1; i++)
+            {
+                var curr = f.datapoints[i];
+                var next = f.datapoints[i + 1];
+
+                Vector2 curr_c = CalculatePosition(curr.Time, f.start, curr.Altitude, size);
+                Vector2 next_c = CalculatePosition(next.Time, f.start, next.Altitude, size);
+
+                if (curr.Time <= currentTime && currentTime < next.Time)
+                {
+                    timeIndicator.localPosition = CalculatePosition(curr.Time, f.start, curr.Altitude, size);
+                }
+
+                if (curr.Waypoint != null)
+                {
+                    if (curr.Waypoint.indicator == null)
+                    {
+                        curr.Waypoint.indicator = Instantiate(waypointIndicatorPrefab, transform);
+                    }
+                    curr.Waypoint.indicator.localPosition = CalculatePosition(curr.Time, f.start, 0, size);
+                }
+
+                vh.AddVert((Vector3)(curr_c) + Vector3.up * LineThikness * 0.5f, color32, new Vector2(0f, 0f));
+                vh.AddVert((Vector3)(curr_c) - Vector3.up * LineThikness * 0.5f, color32, new Vector2(0f, 1f));
+                vh.AddVert((Vector3)(next_c) + Vector3.up * LineThikness * 0.5f, color32, new Vector2(1f, 1f));
+                vh.AddVert((Vector3)(next_c) - Vector3.up * LineThikness * 0.5f, color32, new Vector2(1f, 0f));
+
+                vh.AddTriangle(j * 4 + 0, j * 4 + 1, j * 4 + 2);
+                vh.AddTriangle(j * 4 + 2, j * 4 + 3, j * 4 + 0);
+
+                j++;
+
+            }
+            counter++;
+            if (counter > treshold)
+            {
+                break;
+            }
         }
+        
+    }
 
+    public RectTransform timeIndicator;
+    public RectTransform waypointIndicatorPrefab;
+
+    VertexHelper vh;
+
+    protected override void OnPopulateMesh(Mesh mesh)
+    {
+        if (vh != null)
+        {
+            vh.FillMesh(mesh);
+        }
+        vh.Dispose();
+        vh = null;
     }
 }
