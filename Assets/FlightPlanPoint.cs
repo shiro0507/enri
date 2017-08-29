@@ -8,7 +8,12 @@ public class FlightPlanPoint
     public float Latitude;
     public float Longitude;
 
+    public int firstAltitude;
+    public int secondAltitude;
+
     public RectTransform indicator;
+    public RectTransform firstAltitudeIndicator;
+    public RectTransform secondAltitudeIndicator;
 
     public Vector3 FlatPosition
     {

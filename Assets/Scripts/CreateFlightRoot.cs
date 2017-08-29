@@ -155,7 +155,7 @@ public class CreateFlightRoot : MonoBehaviour
                     FlightDataPoint closest = null;
                     foreach (var fd in f.datapoints)
                     {
-                        float toWaypointDistance = (fd.FlatPosition - wp.FlatPosition).sqrMagnitude;
+                        float toWaypointDistance = (fd.FlatPosition - wp.FlatPosition).magnitude;
                         if (toWaypointDistance < distance) {
                             distance = toWaypointDistance;
                             closest = fd;

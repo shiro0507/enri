@@ -40,6 +40,8 @@ public class FlightPlanFile {
                             row.WaypointID = coord.name;
                             row.Latitude = coord.Latitude;
                             row.Longitude = coord.Longitude;
+                            row.firstAltitude = int.Parse(split[3]);
+                            row.secondAltitude = int.Parse(split[4]);
 
                             plotWaypoints.CreateWP(coord, true);
                             plotWaypoints.dynamiclist.Add(coord);
