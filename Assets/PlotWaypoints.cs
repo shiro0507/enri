@@ -67,6 +67,15 @@ public class PlotWaypoints : MonoBehaviour
         }
     }
 
+    public void Clear() {
+        foreach (Coord bin in dynamiclist)
+        {
+            Destroy(bin.go);
+            //TODO clear text and showpointtag also
+        }
+        dynamiclist.Clear();
+    }
+
     List<Coord> list = new List<Coord>();
     public List<Coord> dynamiclist = new List<Coord>();
 

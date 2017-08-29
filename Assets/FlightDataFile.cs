@@ -10,6 +10,13 @@ public class FlightDataFile
 
     public TimeSpan min = TimeSpan.MaxValue;
     public TimeSpan max = TimeSpan.MinValue;
+
+
+    public void Clear() {
+        flights.Clear();
+        min = TimeSpan.MaxValue;
+        max = TimeSpan.MinValue;
+    }
     
 	public void Load(string[] paths)
 	{

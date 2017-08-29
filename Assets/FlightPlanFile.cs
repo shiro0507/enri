@@ -8,6 +8,10 @@ public class FlightPlanFile {
 
     public Dictionary<string, FlightPlan> plans = new Dictionary<string, FlightPlan>();
 
+    public void Clear() {
+        plans.Clear();
+    }
+
     public void Load(string[] paths, PlotWaypoints plotWaypoints)
     {
         foreach (var path in paths)

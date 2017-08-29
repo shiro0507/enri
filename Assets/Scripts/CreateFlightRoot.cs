@@ -121,10 +121,12 @@ public class CreateFlightRoot : MonoBehaviour
 
     public void UpdateData(string[] paths)
     {
-        //TODO clear stuff
-        // alt graph
-        // globe
-        //waypoints in flight data
+        // clear stuff
+        altitudeLines.Clear();
+        foreach (var flight in flightData.flights.Values) {
+            Destroy(flight.flightPathIndicator.gameObject);
+        }
+        flightData.Clear();
         flightData.Load(paths);
         Current = flightData.min;
         RecalculateWaypoints();
@@ -132,10 +134,10 @@ public class CreateFlightRoot : MonoBehaviour
 
     public void UpdatePlan(string[] paths)
     {
-        //TODO clear stuff
-        // alt graph
-        // globe
-        //waypoints in flight data
+        //clear stuff
+        altitudeLines.Clear();
+        pw.Clear();
+        flightPlan.Clear();
         flightPlan.Load(paths, pw);
         RecalculateWaypoints();
     }
@@ -146,6 +148,11 @@ public class CreateFlightRoot : MonoBehaviour
     {
         foreach (Flight f in flightData.flights.Values)
         {
+            foreach (var fd in f.datapoints)
+            {
+                fd.Waypoint = null;
+            }
+
             FlightPlan p;
             if (flightPlan.plans.TryGetValue(f.flightId, out p))
             {

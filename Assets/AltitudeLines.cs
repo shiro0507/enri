@@ -65,6 +65,33 @@ public class AltitudeLines : MaskableGraphic
 
     }
 
+    public void Clear()
+    {
+        foreach (Flight f in flights)
+        {
+            for (int i = 0; i < f.datapoints.Count; i++)
+            {
+                var curr = f.datapoints[i];
+                if (curr.Waypoint != null)
+                {
+                    if (curr.Waypoint.indicator != null)
+                    {
+                        Destroy(curr.Waypoint.indicator.gameObject);
+                    }
+                    if (curr.Waypoint.firstAltitudeIndicator != null)
+                    {
+                        Destroy(curr.Waypoint.firstAltitudeIndicator.gameObject);
+                    }
+                    if (curr.Waypoint.secondAltitudeIndicator != null)
+                    {
+                        Destroy(curr.Waypoint.secondAltitudeIndicator.gameObject);
+                    }
+                }
+            }
+        }
+        flights.Clear();
+    }
+
     void Update()
     {
         vh = new VertexHelper();
@@ -95,7 +122,8 @@ public class AltitudeLines : MaskableGraphic
                     curr.Waypoint.indicator.localPosition = CalculatePosition(curr.Time, f.start, 0, size);
                     curr.Waypoint.indicator.GetComponentInChildren<Text>().text = curr.Waypoint.WaypointID;
 
-                    if (curr.Waypoint.firstAltitude != 0) {
+                    if (curr.Waypoint.firstAltitude != 0)
+                    {
                         if (curr.Waypoint.firstAltitudeIndicator == null)
                         {
                             curr.Waypoint.firstAltitudeIndicator = Instantiate(firstAltitudeIndicatorPrefab, transform);
@@ -104,7 +132,8 @@ public class AltitudeLines : MaskableGraphic
                         curr.Waypoint.firstAltitudeIndicator.localPosition = CalculatePosition(curr.Time, f.start, curr.Waypoint.firstAltitude, size);
                     }
 
-                    if (curr.Waypoint.secondAltitude != 0) {
+                    if (curr.Waypoint.secondAltitude != 0)
+                    {
                         if (curr.Waypoint.secondAltitudeIndicator == null)
                         {
                             curr.Waypoint.secondAltitudeIndicator = Instantiate(secondAltitudeIndicatorPrefab, transform);
@@ -114,7 +143,8 @@ public class AltitudeLines : MaskableGraphic
                     }
                 }
 
-                if (i < f.datapoints.Count - 1) {
+                if (i < f.datapoints.Count - 1)
+                {
                     var next = f.datapoints[i + 1];
                     Vector2 next_c = CalculatePosition(next.Time, f.start, next.Altitude, size);
 
