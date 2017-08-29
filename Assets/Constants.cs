@@ -40,6 +40,10 @@ public class Coord {
         }
     }
 
+    public Vector3 FlatPositionAtAltitude(float alt) {
+        return Constants.Sphere.ToCartesian(new Vector3(Latitude, Longitude, Constants.globeRadius + alt));
+    }
+
     public static Coord ParseDecimalCoord(string name, string latitude, string longitude)
     {
         var coord = new Coord();
