@@ -76,7 +76,7 @@ public class PlotArea : MonoBehaviour
 
                     }
                 }
-                MeshFilter mf = Instantiate(meshFilter);
+                MeshFilter mf = Instantiate<MeshFilter>(meshFilter, transform);
                 vh.FillMesh(mf.mesh);
             }
         }
