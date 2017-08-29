@@ -30,6 +30,10 @@ public class Coord {
     public string name;
     public GameObject go;
 
+    public Vector3 ToVector3() {
+        return new Vector2(Latitude, Longitude);
+    }
+
     public Vector3 FlatPosition {
         get {
             return Constants.Sphere.ToCartesian(new Vector3(Latitude, Longitude, 0));
