@@ -221,6 +221,7 @@ public class CreateFlightRoot : MonoBehaviour
         {
             Current = _current.Add(new TimeSpan(0, 0, 1));
         }
+        altitudeLines.UpdateData();
     }
 
     public Action<double> OnTimeChange;

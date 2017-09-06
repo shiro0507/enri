@@ -92,7 +92,7 @@ public class AltitudeLines : MaskableGraphic
         flights.Clear();
     }
 
-    void Update()
+    public void UpdateData()
     {
         vh = new VertexHelper();
         var size = new Vector2(rectTransform.rect.width, rectTransform.rect.height);
